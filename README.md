@@ -43,7 +43,7 @@ python train_model.py --k 100 --experiment adult --seed 42
 Try multiple confidence values or sensitive attributes! Or dont supply a sensitive attribute and check global robustness, by modifying epsilon. (only confidence values between 0.5 and 1.0 make sense for adult)
 
 ```bash
-python verify.py --experiment adult \
+python verify_model.py --experiment adult \
                  --sensitive_attribute='gender' \ 
                  --verify global_robustness \
                  --confidence 0.5 \
@@ -55,7 +55,7 @@ python verify.py --experiment adult \
 With SMT backend (for counter-examples):
 
 ```bash
-python verify.py --experiment adult \
+python verify_model.py --experiment adult \
                  --sensitive_attribute='gender' \ 
                  --verify global_robustness \
                  --confidence 0.5 --epsilon 0 \
@@ -67,7 +67,7 @@ python verify.py --experiment adult \
 
 
 ```bash
-python verify.py --experiment <dataset> \
+python verify_model.py --experiment <dataset> \
                  --verify <test_acc|global_robustness|local_robustness> \
                  --model_path <path/to/model.pth> \
                  --seed <int> --k <int> \
