@@ -103,12 +103,23 @@ Add `--usesmt` to obtain counter-examples.
 ```bibtex
 @inproceedings{kresse2025logicgates,
   title     = {Logic Gate Neural Networks are Good for Verification},
-  author    = {Fabian Kresse and Emily Yu and Christoph~H. Lampert and Thomas~A. Henzinger},
-  booktitle = {Proceedings of NeuS},
+  author    = {Kresse, Fabian and Yu, Emily and Lampert, Christoph~H. and Henzinger, Thomas~A.},
+  booktitle = {Proceedings of the 2nd International Conference on Neuro-symbolic Systems (NeuS)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {288},
   year      = {2025},
-  note      = {Code available at https://github.com/your-repo}
+  publisher = {PMLR},
+  url       = {https://github.com/HyberionBrew/difflogic_verify},
+  note      = {Code available at \url{https://github.com/HyberionBrew/difflogic_verify}}
 }
 ```
+
+---
+
+## 6 · License
+
+Released under the **MIT License**; see [`LICENSE`](./LICENSE) for details.  
+Dataset files retain their original licenses.
 
 ---
 
