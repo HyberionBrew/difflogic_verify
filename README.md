@@ -120,10 +120,3 @@ Add `--usesmt` to obtain counter-examples.
 
 Released under the **MIT License**; see [`LICENSE`](./LICENSE) for details.  
 Dataset files retain their original licenses.
-
----
-
-## 6 · License
-
-Released under the **MIT License**; see [`LICENSE`](./LICENSE) for details.  
-Dataset files retain their original licenses.
