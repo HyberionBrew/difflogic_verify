@@ -44,25 +44,32 @@ python train_model.py --k 100 --experiment adult --seed 42
 
 Try multiple confidence values or sensitive attributes! Or dont supply a sensitive attribute and check global robustness, by modifying epsilon. (only confidence values between 0.5 and 1.0 make sense for adult)
 
-```bash
-python verify_model.py --experiment adult \
-                 --sensitive_attribute='gender' \ 
-                 --verify global_robustness \
-                 --confidence 0.5 \
-                 --epsilon 0 \
-                 --model_path models/model_adult_100_42.pth \
-                 --seed 42 --k 100
-```
-
 With SMT backend (for counter-examples):
 
 ```bash
-python verify_model.py --experiment adult \
-                 --sensitive_attribute='gender' \ 
-                 --verify global_robustness \
-                 --confidence 0.5 --epsilon 0 \
-                 --model_path models/model_adult_100_42.pth \
-                 --seed 42 --k 100 --usesmt
+python verify_model.py \
+  --experiment=adult \
+  --verify=global_robustness \
+  --k=100 \
+  --model_path=models/model_adult_100_42.pth \
+  --seed=42 \
+  --confidence=0.6 \
+  --epsilon=0 \
+  --usesmt \
+  --sensitive_attribute=gender
+
+```
+with kissat:
+```bash
+python verify_model.py \
+  --experiment=adult \
+  --verify=global_robustness \
+  --k=100 \
+  --model_path=models/model_adult_100_42.pth \
+  --seed=42 \
+  --confidence=0.6 \
+  --epsilon=0 \
+  --sensitive_attribute=gender
 ```
 
 ---
