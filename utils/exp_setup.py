@@ -19,7 +19,7 @@ import torch
 from functools import partial
 from datasets_neus import dataset
 
-def build_model(in_dim, C=2, k=100, l=3, device='cuda'):
+def build_model(in_dim, C=2, k=100, l=3, device='cpu'):
     layers = []
     layers.append(BaseLogicLayer(in_dim=in_dim, out_dim=k, 
                                  device=device, initalization='random'))
@@ -307,7 +307,7 @@ def setup_folklore_5(args):
 
 def setup_compas(args):
     loaders, categorical_info, numeric_info, C, in_dim = dataset.build_dataset(
-        "folktable_5", batch_size=128, seed=args.seed
+        "compas", batch_size=128, seed=args.seed
     )
 
     model = build_model(in_dim, C, k=args.k, device="cpu")
