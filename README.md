@@ -5,6 +5,8 @@ _Official code for the paper “Logic Gate Neural Networks are Good for Verifica
 
 ## 1 · Installation
 
+Python 3.9 is required.
+
 ```bash
 bash setup.sh
 ```
