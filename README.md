@@ -42,7 +42,7 @@ python train_model.py --k 100 --experiment adult --seed 42
 
 ### Verifying the *Adult* model trained above
 
-Try multiple confidence values or sensitive attributes! Or dont supply a sensitive attribute and check global robustness, by modifying epsilon. (only confidence values between 0.5 and 1.0 make sense for adult)
+Try multiple confidence values or sensitive attributes (`race`, `gender`, `age` (german_credit only))! Keep in mind that only confidence values [1/classes, 1.0] make sense. Or don't supply a sensitive attribute and check global robustness by modifying epsilon.
 
 With SMT backend (for counter-examples):
 
