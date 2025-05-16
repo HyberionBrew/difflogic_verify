@@ -13,13 +13,22 @@ Description:
     Setting up datasets and experiments.
 """
 
-import verification_utils as vutils
-from utils import *
+import utils.verification_utils as vutils
+from .utils import *
 import torch
 from functools import partial
 from datasets_neus import dataset
-from train_model import build_model
 
+def build_model(in_dim, C=2, k=100, l=3, device='cuda'):
+    layers = []
+    layers.append(BaseLogicLayer(in_dim=in_dim, out_dim=k, 
+                                 device=device, initalization='random'))
+    for _ in range(l-1):
+        layers.append(BaseLogicLayer(in_dim=k, out_dim=k, 
+                                     device=device, initalization='random'))
+    layers.append(BaseGroupSum(k=C,in_dim=k, tau=20.0, device=device))
+    model = torch.nn.Sequential(*layers)
+    return model
 
 def setup_german_credit(args):
     loaders, categorical_info, numeric_info, C, in_dim = dataset.build_dataset(

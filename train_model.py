@@ -16,20 +16,9 @@ import numpy as np
 import json 
 import os
 from tqdm import tqdm
-from difflogic import BaseLogicLayer, BaseGroupSum
 from datasets_neus import dataset
 from torch import nn
-
-def build_model(in_dim, C=2, k=100, l=3, device='cuda'):
-    layers = []
-    layers.append(BaseLogicLayer(in_dim=in_dim, out_dim=k, 
-                                 device=device, initalization='random'))
-    for _ in range(l-1):
-        layers.append(BaseLogicLayer(in_dim=k, out_dim=k, 
-                                     device=device, initalization='random'))
-    layers.append(BaseGroupSum(k=C,in_dim=k, tau=20.0, device=device))
-    model = torch.nn.Sequential(*layers)
-    return model
+from utils.exp_setup import build_model
 
 
 def eval_model(model, loader, mode, device='cpu'):

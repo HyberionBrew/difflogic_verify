@@ -13,7 +13,7 @@ Description:
     various utility functions.
 """
 
-from difflogic import BaseLogicLayer, BaseGroupSum
+from .difflogic import BaseLogicLayer, BaseGroupSum
 import numpy as np
 import matplotlib.pyplot as plt
 import re

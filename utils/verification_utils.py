@@ -15,9 +15,9 @@ Description:
 
 import z3
 from z3 import Bool, Not, Or, And, Implies, Xor
-from sorting_network import sort_net
-from difflogic import gate_expression_not, gate_expression_16, gate_expression_6
-from difflogic import BaseLogicLayer, BaseGroupSum
+from .sorting_network import sort_net
+from .difflogic import gate_expression_not, gate_expression_16, gate_expression_6
+from .difflogic import BaseLogicLayer, BaseGroupSum
 # import pbeq from z3
 from z3 import PbEq
 

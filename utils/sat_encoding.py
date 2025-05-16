@@ -12,7 +12,7 @@ Code authors:
 Description:
     The SAT encoding for the logic gate network.
 """
-import verification_utils as vutils
+import utils.verification_utils as vutils
 import z3
 from z3 import And
 import time
@@ -23,7 +23,7 @@ import uuid
 import subprocess
 #from pysat.formula import *
 #from pysat.solvers import Cadical195,Solver
-from utils import get_model_infos
+from .utils import get_model_infos
 
 def sat_check_model_existence(model, confidence,
                                 input_constraints_fn):

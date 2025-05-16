@@ -14,14 +14,12 @@ Description:
 """
 
 
-from sat_encoding import sat_check_model_existence, sat_check_global_robustness
+from utils.sat_encoding import sat_check_model_existence, sat_check_global_robustness
 import torch
 from tqdm import tqdm
 import argparse
-from exp_setup import setup_experiment
-from utils import run_ce_trough_model
-import z3
-from utils import eval_model
+from utils.exp_setup import setup_experiment
+from utils.utils import eval_model, run_ce_trough_model
 import numpy as np
 from rich.console import Console
 from rich.panel import Panel
